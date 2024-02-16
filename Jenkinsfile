@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout HTML and CSS') {
+        stage('Checkout') {
             steps {
-                // Checkout HTML and CSS files from version control
+                // Checkout the repository
                 git 'https://github.com/vinaym10/mypractice.git'
             }
         }
