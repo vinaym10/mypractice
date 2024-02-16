@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('Checkout HTML and CSS') {
       steps {
-        git 'https://github.com/vinaym10/mypractice.git'
+        git credentialsId: 'vinaym10', url: 'https://github.com/vinaym10/mypractice.git'
       }
     }
    stage ('Deploy HTML and CSS') {
