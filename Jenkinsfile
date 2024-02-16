@@ -1,23 +1,18 @@
 pipeline {
     agent any
-    
+
     stages {
-        stage('Build') {
+        stage('Checkout HTML and CSS') {
             steps {
-                echo 'Building...'
-                // Add your build steps here
+                // Checkout HTML and CSS files from version control
+                git 'https://github.com/your-repo/your-project.git'
             }
         }
-        stage('Test') {
+        stage('Deploy HTML and CSS') {
             steps {
-                echo 'Testing...'
-                // Add your test steps here
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                // Add your deployment steps here
+                // Copy HTML and CSS files to web server directory
+                sh 'cp index.html /var/www/html/'
+                sh 'cp styles.css /var/www/html/'
             }
         }
     }
