@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout HTML and CSS') {
             steps {
                 // Checkout HTML and CSS files from version control
-                git 'https://github.com/your-repo/your-project.git'
+                git 'https://github.com/vinaym10/mypractice.git'
             }
         }
         stage('Deploy HTML and CSS') {
