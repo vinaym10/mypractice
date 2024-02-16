@@ -1,16 +1,24 @@
 pipeline {
-  agent any
-  stages {
-    stage ('Checkout HTML and CSS') {
-      steps {
-        git credentialsId: 'vinaym10', url: 'https://github.com/vinaym10/mypractice.git'
-      }
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                // Add your build steps here
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                // Add your test steps here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Add your deployment steps here
+            }
+        }
     }
-   stage ('Deploy HTML and CSS') {
-     steps {
-       sh 'cp index.html /var/ww/html/'
-       sh 'cp styles.css /var/ww/html/'
-     }
-   } 
-  }
 }
